@@ -1,192 +1,162 @@
-# 🇦🇺 Australia Steel Import Market Analysis
+# Australia Steel Import Market Analysis
 
-Analysis of Australia's steel import market using monthly Australian Bureau of Statistics (ABS) data.
+Analysis of Australia's steel import market using Australian Bureau of Statistics (ABS) merchandise import data.
 
-This project examines Australia's steel import trends, major source countries, market shares, and South Korea's position in the Australian steel import market.
+This project looks at Australia's steel import values, major source countries, market share movements, and the position of South Korea in the market.
 
----
+## Project Overview
 
-## 📌 Project Overview
+This project analyses Australia's steel imports from January 2015 to July 2026.
 
-This project analyses Australia's steel imports from **January 2015 to July 2026**, with a focus on:
+The analysis focuses on:
 
-- Overall Australian steel import trends
-- Annual and monthly import values
-- Major source countries
-- Recent country-level import trends
+- Overall monthly and annual import trends
+- Import values by country of origin
+- Recent changes in major source countries
 - Market share by source country
-- South Korea's long-term market position
-- Recent changes in the competitive landscape
+- Long-term changes in supplier market share
+- South Korea's import value and market share
 
-The analysis provides a data-driven view of Australia's steel import market and changes in major supply sources over time.
+The project uses ABS data to examine how Australia's steel import market has changed over time.
 
----
+## Key Analysis
 
-## 📊 Data
+### Overall Import Trends
 
-**Source:** Australian Bureau of Statistics (ABS)
+Monthly and annual import values were analysed to identify changes in Australia's steel import market over the long term.
 
-**Dataset:** Merchandise Imports
+![Australia Steel Import Monthly Trend](australia_steel_import_trend.png)
 
-**Commodity:** SITC 67 — Iron and Steel
+![Australia Steel Import Annual Trend](australia_steel_import_annual.png)
 
-**Period:** January 2015 – July 2026
+Import values have varied considerably over the period, with higher levels generally observed during the early 2020s compared with much of the earlier period.
 
-**Frequency:** Monthly
+### Source Country Analysis
 
-**Destination:** Australia (Total)
-
-**Measure:** Import Value (AUD)
-
-The data was retrieved from the ABS SDMX API and processed using Python.
-
----
-
-## 📈 Australian Steel Import Trend
-
-### Monthly Trend
-
-![Monthly Steel Import Trend](australia_steel_import_trend.png)
-
-### Annual Trend
-
-![Annual Steel Import Trend](australia_steel_import_annual.png)
-
-The annual data shows considerable fluctuations in Australia's steel import value, with import levels increasing substantially during the early 2020s compared with the mid-to-late 2010s.
-
----
-
-## 🌏 Source Country Analysis
-
-The project analyses Australia's steel imports by country of origin.
-
-### Recent Country Import Trends
+Imports were grouped by country of origin to identify major suppliers and changes in Australia's supplier composition.
 
 ![Recent Country Import Trends](recent_country_import_trends.png)
 
-The analysis identifies major steel supply sources and tracks changes in their import values over time.
+Country-level analysis covers both long-term import values and recent changes in import activity.
 
-Countries with unidentified origin information are reported separately as **"No Country Details"** rather than being treated as a specific country.
+Records where the country of origin was not specified by ABS are reported as "No Country Details" and are not treated as a specific country.
 
----
+### Market Share
 
-## 🥧 Market Share Analysis
+Market share was calculated using the import value recorded for each source country.
 
-Recent market share was analysed using import values by country.
-
-### 2024
+#### 2024
 
 ![2024 Market Share](recent_market_share_2024.png)
 
-### 2025
+#### 2025
 
 ![2025 Market Share](recent_market_share_2025.png)
 
-### 2026 YTD
+#### 2026 YTD
 
 ![2026 YTD Market Share](recent_market_share_2026_ytd.png)
 
-**Note:** 2026 represents **Year-to-Date (YTD) data through July 2026**, rather than a full-year figure.
+The 2026 figures represent January–July 2026 and are therefore treated as year-to-date results rather than a full-year figure.
 
----
+### South Korea
 
-## 🇰🇷 South Korea
-
-South Korea is analysed separately to examine its long-term position in Australia's steel import market.
-
-### South Korea Market Share Trend
+South Korea was analysed separately to examine changes in its import value and market share over time.
 
 ![South Korea Market Share Trend](south_korea_market_share_trend.png)
 
-The analysis tracks changes in South Korea's import value and market share over the long term and compares its position with other major source countries.
+The analysis compares South Korea's position with other major source countries and tracks changes in its share of Australia's steel import market.
 
----
-
-## 🌎 Major Countries
-
-The project also compares market-share movements among major steel-exporting countries.
+### Major Country Comparison
 
 ![Major Countries Market Share Trend](major_countries_market_share_trend.png)
 
-This provides a longer-term view of how Australia's supplier composition has changed.
+This comparison shows how the market shares of major source countries have changed over the longer term.
 
----
+## Data
 
-## 📁 Analysis Outputs
+- Source: Australian Bureau of Statistics (ABS)
+- Dataset: Merchandise Imports
+- Commodity: SITC 67 — Iron and Steel
+- Period: January 2015 – July 2026
+- Frequency: Monthly
+- Destination: Australia
+- Measure: Import Value (AUD)
 
-The project generates several CSV datasets for further analysis:
+The data was collected through the ABS SDMX API and processed using Python.
 
-| File | Description |
-|---|---|
-| `steel_import_raw.csv` | Raw ABS import data |
-| `steel_import_monthly.csv` | Monthly import data |
-| `steel_import_monthly_clean.csv` | Cleaned monthly dataset |
-| `steel_import_by_country.csv` | Import data by source country |
-| `steel_import_by_country_clean.csv` | Cleaned country-level data |
-| `steel_import_annual_clean.csv` | Annual import values |
-| `long_term_import_value.csv` | Long-term country import values |
-| `long_term_market_share.csv` | Long-term market share |
-| `long_term_country_analysis.csv` | Long-term country analysis |
-| `2025_country_ranking.csv` | 2025 country ranking |
-| `2026_country_ytd.csv` | 2026 YTD country ranking |
-| `recent_market_share_comparison.csv` | Recent market-share comparison |
-| `south_korea_long_term_trend.csv` | South Korea long-term trend |
+## Tools & Technologies
 
----
+- Python
+- Pandas
+- Matplotlib
+- ABS SDMX API
+- Git
+- GitHub
 
-## 💻 Python Analysis
+Python was used for data collection, cleaning, analysis and visualisation. Pandas was used for data processing and aggregation, while Matplotlib was used to create the charts.
 
-The analysis was conducted using Python and includes:
+## Project Purpose
 
-- `get_data.py` — Retrieves data from the ABS API
-- `analysis.py` — Data validation and monthly/annual analysis
-- `country_analysis.py` — Country-level analysis
-- `country_comparison.py` — Country comparisons
-- `long_term_country_analysis.py` — Long-term country analysis
-- `market_share.py` — Market-share analysis
-- `market_share_pie.py` — Market-share visualisation
-- `recent_market_analysis.py` — Recent market analysis
-- `recent_country_trends.py` — Recent country trends
-- `recent_market_share_pies.py` — Recent market-share pie charts
-
----
-
-## 🛠️ Tools & Technologies
-
-- **Python**
-- **Pandas**
-- **Matplotlib**
-- **ABS SDMX API**
-- **CSV data processing**
-- **Data visualisation**
-- **Git / GitHub**
-
----
-
-## 🎯 Project Purpose
-
-The purpose of this project is to use publicly available trade data to understand the structure and evolution of Australia's steel import market.
+The purpose of this project is to understand the structure and development of Australia's steel import market using publicly available trade data.
 
 The analysis can be used to examine:
 
-- Changes in Australia's overall steel import demand
-- Shifts in major supply countries
+- Changes in Australia's steel import demand
+- Major source countries and their relative positions
 - Changes in supplier market share
-- South Korea's position in the market
-- Changes in Australia's steel supply landscape
+- Long-term movements in the market
+- South Korea's position within the Australian market
 
----
+## Analysis Files
 
-## 📌 Data Limitations
+The main Python scripts used in the analysis are:
 
-The latest available observation in this project is **July 2026**. Therefore, 2026 annual figures and market shares represent **YTD data** and should not be interpreted as full-year results.
+| File | Description |
+|---|---|
+| `get_data.py` | Retrieves steel import data from the ABS API |
+| `analysis.py` | Validates and analyses the monthly data |
+| `country_analysis.py` | Analyses imports by country |
+| `country_comparison.py` | Compares source countries |
+| `long_term_country_analysis.py` | Long-term country analysis |
+| `market_share.py` | Calculates market share |
+| `market_share_pie.py` | Creates market share charts |
+| `recent_market_analysis.py` | Recent market analysis |
+| `recent_country_trends.py` | Recent country trends |
+| `recent_market_share_pies.py` | Creates recent market share pie charts |
 
-Some ABS records contain an unspecified country of origin. These observations are labelled **"No Country Details"** and are kept separate from identified source countries.
+## Output Data
 
----
+The analysis produces CSV files containing monthly, annual, country-level and market-share data.
 
-## 📚 Data Source
+Examples include:
 
-Australian Bureau of Statistics — Merchandise Imports
+- `steel_import_monthly_clean.csv`
+- `steel_import_annual_clean.csv`
+- `steel_import_by_country_clean.csv`
+- `long_term_import_value.csv`
+- `long_term_market_share.csv`
+- `2025_country_ranking.csv`
+- `2026_country_ytd.csv`
+- `recent_market_share_comparison.csv`
+- `south_korea_long_term_trend.csv`
 
-**Commodity:** SITC 67 — Iron and Steel
+## Project Structure
+
+```text
+australia-steel-import-analysis/
+│
+├── get_data.py
+├── analysis.py
+├── country_analysis.py
+├── country_comparison.py
+├── long_term_country_analysis.py
+├── market_share.py
+├── market_share_pie.py
+├── recent_market_analysis.py
+├── recent_country_trends.py
+├── recent_market_share_pies.py
+│
+├── CSV data files
+│
+└── PNG visualisations
